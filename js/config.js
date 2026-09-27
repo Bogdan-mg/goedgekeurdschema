@@ -22,7 +22,7 @@ window.SITE = {
   // "populair: true" krijgt het label "Meest gekozen".
   pakketten: [
     { id: "app",   naam: "Appartement",        m2: 110, zekeringen: 12, prijs: 265 },
-    { id: "won",   naam: "Woning / duplex",    m2: 110, zekeringen: 12, prijs: 310, populair: true },
+    { id: "won",   naam: "Woning / duplex",    m2: 110, zekeringen: 12, prijs: 310 },
     { id: "w250",  naam: "Woning tot 250\u00a0m²",  m2: 250, zekeringen: 25, prijs: 450 },
     { id: "w450",  naam: "Woning tot 450\u00a0m²",  m2: 450, zekeringen: 40, prijs: 680 },
   ],

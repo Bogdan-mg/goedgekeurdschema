@@ -56,8 +56,9 @@
     { id: "groter", naam: "Groter / anders", sub: "prijs op maat" },
     { id: "twijfel", naam: "Ik twijfel", sub: "ik stuur een foto van mijn verdeelkast" },
   ]);
+  var standaard = (S.pakketten.filter(function (p) { return p.populair; })[0] || S.pakketten[0]).id;
   $("#pkgChoices").innerHTML = keuzes.map(function (k) {
-    return '<label class="chip big"><input type="radio" name="pakket" value="' + k.id + '"' + (k.pkg && k.pkg.populair ? " checked" : "") + ">" +
+    return '<label class="chip big"><input type="radio" name="pakket" value="' + k.id + '"' + (k.id === standaard ? " checked" : "") + ">" +
       "<span><b>" + esc(k.naam) + (k.pkg ? " <em>" + euro(k.pkg.prijs) + "</em>" : "") + "</b><small>" + esc(k.sub) + "</small></span></label>";
   }).join("");
 
