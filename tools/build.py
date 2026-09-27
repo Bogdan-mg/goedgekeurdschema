@@ -252,6 +252,8 @@ def build():
             out = out.replace(k, v)
         for k, v in tokens.items():
             out = out.replace(k, v)
+        if path == "index.html":
+            out = out.replace('href="./#', 'href="#')  # op de homepage zelf: blijf op dezelfde pagina
         left = re.findall(r"\{\{[^}]+\}\}", out)
         if left:
             raise SystemExit(f"{f.name}: onvervangen tokens {left}")

@@ -68,6 +68,10 @@ h3 { font-size: 1.2rem; font-weight: 700; }
 .btn-white { background: #fff; color: var(--green-d); }
 .btn-white:hover { background: var(--amber-l); }
 .btn-teal { background: var(--green); color: #fff; border-radius: 10px; padding: 1em 1.2em; }
+.btn-teal.btn-lg { border-radius: 999px; padding: 1em 1.7em; }
+.btn-line { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .6); }
+.btn-line:hover { border-color: #fff; background: rgba(255, 255, 255, .08); }
+.btn[disabled] { opacity: .6; cursor: wait; transform: none; }
 .btn-teal:hover { background: var(--green-d); }
 
 /* Topbalk */
@@ -235,6 +239,17 @@ legend { font-weight: 700; font-size: .95rem; margin-bottom: 8px; }
 .total b { display: block; font-size: 2rem; font-weight: 800; line-height: 1.1; }
 .total small { display: block; }
 .formerr { color: var(--red); font-weight: 600; margin: 10px 0 0; min-height: 1em; }
+.formerr a { color: inherit; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.send { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
+.send small { color: var(--muted); font-weight: 600; }
+.send-btns { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+.book-ok { text-align: center; }
+.book-ok[hidden] { display: none; }
+.book-ok p { color: var(--text); max-width: 520px; margin: 0 auto 10px; }
+.ok-ico { display: grid; place-items: center; width: 64px; height: 64px; margin: 0 auto 14px; border-radius: 50%; background: var(--green-l); color: var(--green); }
+.ok-ico .ico { width: 32px; height: 32px; }
+.cta-btns { display: flex; gap: 12px; flex-wrap: wrap; }
 
 /* FAQ */
 details { border: 1px solid var(--line); border-radius: 14px; padding: 0 20px; margin: 10px 0; background: var(--surface); }
@@ -347,7 +362,8 @@ details p { margin: 0 0 18px; color: var(--text); }
   .btn-sm span { display: none; }
   .hero-cta .btn { width: 100%; }
   .book { padding: 22px 18px; }
-  .total .btn { width: 100%; }
+  .total .btn, .send, .send-btns, .send-btns .btn, .cta-btns, .cta-btns .btn { width: 100%; }
+  .send { align-items: stretch; }
   .page-hero { padding-bottom: 44px; }
 }
 @media (prefers-reduced-motion: reduce) {

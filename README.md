@@ -28,8 +28,26 @@ De `.html`-bestanden in de hoofdmap worden daaruit **gebouwd**. Pas die niet rec
   dan bouwt de workflow *Website bouwen* (`.github/workflows/build.yml`) de site opnieuw.
 - Lokaal: `python3 tools/build.py` (vereist Python 3 en Node).
 
+## Afspraken ontvangen
+
+Klanten kiezen onderaan het formulier **WhatsApp** of **E-mail**.
+
+- **WhatsApp**: opent WhatsApp met een ingevuld bericht naar `whatsapp` uit `js/config.js`.
+- **E-mail**: de aanvraag wordt via [FormSubmit](https://formsubmit.co) (gratis, geen account)
+  naar `boekingEmail` gestuurd, met een kopie naar `boekingCc`. De klant krijgt automatisch
+  een bevestigingsmail.
+  - **Eenmalig activeren:** doe na het online zetten zelf een testaanvraag via e-mail.
+    FormSubmit stuurt dan een mail naar `boekingEmail` → klik op **Activate Form**.
+    Vanaf dan komen alle aanvragen binnen (kijk de eerste keer ook in je spam).
+  - Wil je je e-mailadres niet zichtbaar in de website? FormSubmit geeft je na de activatie
+    een willekeurige code; vul die in bij `boekingEmail` in plaats van je adres.
+
 ## Online zetten (GitHub Pages)
 
+0. **De repository moet openbaar zijn.** Met een gratis GitHub-account werkt Pages niet voor
+   privé-repositories. *Settings* → *General* → helemaal onderaan *Danger Zone* →
+   *Change visibility* → *Change to public*. (Er staat niets geheims in: alles is sowieso
+   zichtbaar op de website.)
 1. *Settings* → *Pages* → *Deploy from a branch* → kies de branch, map `/ (root)`.
 2. `CNAME` bevat al `goedgekeurdschema.be`.
 3. DNS bij je domeinregistrar:

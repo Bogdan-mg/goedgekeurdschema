@@ -1,7 +1,7 @@
 <!--
 {"title": "Eendraadschema & situatieschema Antwerpen | Goedgekeurd Schema",
  "og_title": "Eendraadschema en situatieschema aan vaste prijs — Goedgekeurd Schema",
- "description": "Eendraadschema en situatieschema laten opmaken in Antwerpen en omgeving, volgens het AREI. Vaste prijs vanaf {{prijs_vanaf}} incl. btw en verplaatsing. Boek via WhatsApp.",
+ "description": "Eendraadschema en situatieschema laten opmaken in Antwerpen en omgeving, volgens het AREI. Vaste prijs vanaf {{prijs_vanaf}} incl. btw en verplaatsing. Boek via WhatsApp of e-mail.",
  "priority": 1.0}
 -->
     <!-- HERO -->
@@ -10,9 +10,9 @@
         <div class="hero-text">
           <p class="eyebrow">✓ Volgens het AREI · Vaste prijs · Antwerpen en omgeving</p>
           <h1>Je eendraadschema en situatieschema, <span class="hl">snel en zonder zorgen</span> in orde.</h1>
-          <p class="lead">Wij maken je elektrische schema's op volgens het AREI — voor je keuring, de verkoop van je woning of na een afkeuring. Vaste prijs vanaf <strong>{{prijs_vanaf}}</strong>, verplaatsing in {{werkgebied}} inbegrepen. Eén berichtje via WhatsApp en wij regelen de rest.</p>
+          <p class="lead">Wij maken je elektrische schema's op volgens het AREI — voor je keuring, de verkoop van je woning of na een afkeuring. Vaste prijs vanaf <strong>{{prijs_vanaf}}</strong>, verplaatsing in {{werkgebied}} inbegrepen. Maak je afspraak via WhatsApp of e-mail en wij regelen de rest.</p>
           <div class="hero-cta">
-            <a class="btn btn-wa btn-lg" href="#boeken"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Boek via WhatsApp</a>
+            <a class="btn btn-teal btn-lg" href="#boeken"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg>Maak een afspraak</a>
             <a class="btn btn-ghost btn-lg" href="#prijzen">Bekijk de prijzen</a>
           </div>
           <ul class="usp">
@@ -137,13 +137,18 @@
       <div class="wrap">
         <div class="sec-head">
           <div><p class="kicker">05 / Afspraak maken</p><h2>Boek in 30 seconden</h2></div>
-          <p>Vul in wat je weet — wij maken er een WhatsApp-bericht van. Je betaalt pas als je schema's klaar zijn.</p>
+          <p>Vul in wat je weet en kies hoe je je aanvraag verstuurt: via WhatsApp of per e-mail. Je betaalt pas als je schema's klaar zijn.</p>
         </div>
         <form class="book" id="bookForm" novalidate>
           <div class="grid2">
             <label>Je naam<input name="naam" autocomplete="name" placeholder="bv. Sarah Peeters" required></label>
             <label>Gemeente / postcode<input name="gemeente" autocomplete="address-level2" placeholder="bv. 2600 Berchem" required></label>
           </div>
+          <div class="grid2">
+            <label>E-mailadres <small>(nodig bij e-mail)</small><input name="email" type="email" autocomplete="email" inputmode="email" placeholder="bv. sarah@voorbeeld.be"></label>
+            <label>Telefoon <small>(optioneel)</small><input name="telefoon" type="tel" autocomplete="tel" inputmode="tel" placeholder="bv. 0470 12 34 56"></label>
+          </div>
+          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <fieldset>
             <legend>Type woning</legend>
             <div class="choices" id="pkgChoices">{{keuzes}}</div>
@@ -172,10 +177,22 @@
 
           <div class="total">
             <div><small>Jouw vaste prijs</small><b id="totalPrice">{{prijs:app}}</b><small id="totalNote">incl. btw & verplaatsing</small></div>
-            <button class="btn btn-wa btn-lg" type="submit"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Verstuur via WhatsApp</button>
+            <div class="send">
+              <small>Verstuur je aanvraag via</small>
+              <div class="send-btns">
+                <button class="btn btn-wa btn-lg" type="submit" value="wa"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</button>
+                <button class="btn btn-teal btn-lg" type="submit" value="mail"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>E-mail</button>
+              </div>
+            </div>
           </div>
           <p class="formerr" id="formErr" role="alert"></p>
         </form>
+        <div class="book book-ok" id="bookOk" hidden tabindex="-1">
+          <span class="ok-ico" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
+          <h3>Bedankt, je aanvraag is verstuurd!</h3>
+          <p>We hebben je aanvraag goed ontvangen en nemen zo snel mogelijk contact met je op om een moment af te spreken. Je krijgt ook een bevestiging in je mailbox.</p>
+          <p class="more"><a data-wa="Hallo! Ik heb net een afspraak aangevraagd via de website." href="#">Liever meteen chatten? Stuur ons een WhatsApp →</a></p>
+        </div>
       </div>
     </section>
 
@@ -218,6 +235,7 @@
         <details class="faq-q"><summary>Wat is een situatieschema?</summary><p>Een situatieschema is een plattegrond van je woning waarop alle stopcontacten, schakelaars, lichtpunten en toestellen staan, met het nummer van de kring waarop ze aangesloten zijn.</p></details>
         <details class="faq-q"><summary>Heb ik die schema's nodig?</summary><p>Ja, bij de verkoop van een woning, bij een nieuwe installatie en bij een herkeuring vraagt de keurder altijd een eendraad- en situatieschema. Zonder schema's volgt bijna altijd een afkeuring.</p></details>
         <details class="faq-q"><summary>Hoe weet ik welk pakket ik nodig heb?</summary><p>Kijk naar de bewoonbare oppervlakte en tel de automaten (zekeringen) in je verdeelkast. Val je in twee pakketten, dan geldt het hoogste. Twijfel je? Stuur ons een foto van je verdeelkast via WhatsApp, dan zeggen wij het je.</p></details>
+        <details class="faq-q"><summary>Kan ik ook per e-mail een afspraak maken?</summary><p>Ja. Vul het formulier bij "Afspraak maken" in en kies onderaan voor e-mail. Je aanvraag komt dan rechtstreeks in onze mailbox terecht en je krijgt een bevestiging. Liever chatten? Kies dan WhatsApp.</p></details>
         <details class="faq-q"><summary>Kan ik een offerte krijgen zonder dat jullie langskomen?</summary><p>Ja. Stuur een foto van je keuringsverslag (en eventueel van je verdeelkast) via WhatsApp. Op basis daarvan krijg je een vrijblijvende prijs.</p></details>
         <details class="faq-q"><summary>Wanneer moet ik betalen?</summary><p>Pas wanneer je schema's klaar zijn en digitaal in je mailbox zitten. Je betaalt eenvoudig via overschrijving.</p></details>
         <details class="faq-q"><summary>Zijn er extra kosten?</summary><p>Nee. De prijs is vast, inclusief btw en verplaatsing in {{werkgebied}}. De keuring zelf door een erkend keuringsorganisme is niet inbegrepen.</p></details>

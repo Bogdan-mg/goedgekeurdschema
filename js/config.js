@@ -16,6 +16,13 @@ window.SITE = {
   telefoon: "",
   email: "info@goedgekeurdschema.be",
 
+  // Afspraken via e-mail (verstuurd via FormSubmit.co, gratis, zonder account).
+  // De eerste aanvraag stuurt een activatiemail naar boekingEmail: klik op "Activate Form".
+  // Tip: FormSubmit geeft je daarna een willekeurige code; die mag je hier invullen
+  // in plaats van je e-mailadres, zodat je adres niet zichtbaar is in de website.
+  boekingEmail: "giurgeab@gmail.com",
+  boekingCc: "info@goedgekeurdschema.be",   // krijgt een kopie (mag leeg blijven)
+
   // Wettelijk verplicht op een Belgische bedrijfswebsite:
   // officiële naam, adres en ondernemingsnummer (KBO / btw).
   bedrijfsnaam: "",            // bv. "Jan Peeters" of "Goedgekeurd Schema BV"
