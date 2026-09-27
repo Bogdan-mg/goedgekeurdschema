@@ -1,0 +1,33 @@
+# Bouwt de website opnieuw op wanneer je js/config.js of iets in src/ aanpast
+# (bv. rechtstreeks op GitHub), en zet het resultaat terug in de repository.
+name: Website bouwen
+
+on:
+  push:
+    paths:
+      - "js/config.js"
+      - "src/**"
+      - "tools/build.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: python3 tools/build.py
+      - name: Wijzigingen bewaren
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "Website opnieuw gebouwd"
+            git push
+          fi

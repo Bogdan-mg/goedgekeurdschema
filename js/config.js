@@ -1,11 +1,13 @@
 /*
  * ─────────────────────────────────────────────────────────────
  *  INSTELLINGEN — pas hier je gegevens en prijzen aan.
- *  Alles op de website (prijskaarten, boekingsformulier, WhatsApp-knoppen)
- *  wordt automatisch uit dit bestand opgebouwd.
+ *  Na een wijziging op GitHub bouwt de site zichzelf opnieuw op
+ *  (zie .github/workflows/build.yml). Lokaal: python3 tools/build.py
  * ─────────────────────────────────────────────────────────────
  */
 window.SITE = {
+  naam: "Goedgekeurd Schema",
+
   // WhatsApp-nummer in internationaal formaat, zonder +, spaties of 0 vooraan.
   // Voorbeeld: 0470 12 34 56  →  "32470123456"
   whatsapp: "32470000000",
@@ -14,17 +16,22 @@ window.SITE = {
   telefoon: "",
   email: "info@goedgekeurdschema.be",
 
+  // Wettelijk verplicht op een Belgische bedrijfswebsite:
+  // officiële naam, adres en ondernemingsnummer (KBO / btw).
+  bedrijfsnaam: "",            // bv. "Jan Peeters" of "Goedgekeurd Schema BV"
+  ondernemingsnummer: "",      // bv. "BE 0123.456.789"
+  adres: { straat: "", postcode: "", gemeente: "" },
+
   // Levertijd en werkgebied
   levertijdWerkdagen: 10,
   werkgebied: "heel België",
 
   // Pakketten: eendraadschema + situatieschema. Prijzen in euro, incl. btw en verplaatsing.
-  // "populair: true" krijgt het label "Meest gekozen".
   pakketten: [
-    { id: "app",   naam: "Appartement",        m2: 110, zekeringen: 12, prijs: 265 },
-    { id: "won",   naam: "Woning / duplex",    m2: 110, zekeringen: 12, prijs: 310 },
-    { id: "w250",  naam: "Woning tot 250\u00a0m²",  m2: 250, zekeringen: 25, prijs: 450 },
-    { id: "w450",  naam: "Woning tot 450\u00a0m²",  m2: 450, zekeringen: 40, prijs: 680 },
+    { id: "app",   naam: "Appartement",            m2: 110, zekeringen: 12, prijs: 265 },
+    { id: "won",   naam: "Woning / duplex",        m2: 110, zekeringen: 12, prijs: 310 },
+    { id: "w250",  naam: "Woning tot 250 m²", m2: 250, zekeringen: 25, prijs: 450 },
+    { id: "w450",  naam: "Woning tot 450 m²", m2: 450, zekeringen: 40, prijs: 680 },
   ],
 
   // Wat zit er in elk pakket?
