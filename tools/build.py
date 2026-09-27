@@ -32,6 +32,11 @@ def load_config():
     return json.loads(out)
 
 
+def intl(tel):
+    d = re.sub(r"[^0-9+]", "", tel)
+    return "+32" + d[1:] if d.startswith("0") else d
+
+
 def euro(n):
     return "€ " + f"{n:,}".replace(",", ".")
 
@@ -126,7 +131,7 @@ def business(S):
     if S.get("email"):
         b["email"] = S["email"]
     if S.get("telefoon"):
-        b["telephone"] = S["telefoon"]
+        b["telephone"] = intl(S["telefoon"])
     elif S.get("whatsapp") and S["whatsapp"] != "32470000000":
         b["telephone"] = "+" + S["whatsapp"]
     if S.get("ondernemingsnummer"):
@@ -184,7 +189,7 @@ def build():
 
     contact = [f'<a data-wa="Hallo!" href="https://wa.me/{S["whatsapp"]}">WhatsApp</a>']
     if S.get("telefoon"):
-        contact.append(f'<a href="tel:{re.sub(r"[^0-9+]", "", S["telefoon"])}">{esc(S["telefoon"])}</a>')
+        contact.append(f'<a href="tel:{intl(S["telefoon"])}">{esc(S["telefoon"])}</a>')
     if S.get("email"):
         contact.append(f'<a href="mailto:{esc(S["email"])}">{esc(S["email"])}</a>')
     contact.append(f'Werkgebied: {esc(S["werkgebied"])}')

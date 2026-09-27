@@ -10,10 +10,10 @@ window.SITE = {
 
   // WhatsApp-nummer in internationaal formaat, zonder +, spaties of 0 vooraan.
   // Voorbeeld: 0470 12 34 56  →  "32470123456"
-  whatsapp: "32470000000",
+  whatsapp: "32489413589",
 
   // Zichtbaar telefoonnummer en e-mail (mag leeg blijven: "")
-  telefoon: "",
+  telefoon: "0489 41 35 89",
   email: "info@goedgekeurdschema.be",
 
   // Afspraken via e-mail (verstuurd via FormSubmit.co, gratis, zonder account).
