@@ -23,8 +23,8 @@ window.SITE = {
   pakketten: [
     { id: "app",   naam: "Appartement",        m2: 110, zekeringen: 12, prijs: 265 },
     { id: "won",   naam: "Woning / duplex",    m2: 110, zekeringen: 12, prijs: 310, populair: true },
-    { id: "w250",  naam: "Woning tot 250 m²",  m2: 250, zekeringen: 25, prijs: 450 },
-    { id: "w450",  naam: "Woning tot 450 m²",  m2: 450, zekeringen: 40, prijs: 680 },
+    { id: "w250",  naam: "Woning tot 250\u00a0m²",  m2: 250, zekeringen: 25, prijs: 450 },
+    { id: "w450",  naam: "Woning tot 450\u00a0m²",  m2: 450, zekeringen: 40, prijs: 680 },
   ],
 
   // Wat zit er in elk pakket?

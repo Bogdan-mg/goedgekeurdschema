@@ -35,11 +35,12 @@
       '<span class="card-ico" aria-hidden="true"><svg class="ico"><use href="#i-home"/></svg></span>' +
       "<h3>" + esc(p.naam) + "</h3>" +
       '<p class="card-sub">Tot <b>' + p.m2 + ' m²</b><br>Tot <b>' + p.zekeringen + " zekeringen</b></p>" +
-      '<div class="price"><b>' + euro(p.prijs) + '</b><small>incl. btw en verplaatsing</small></div>' +
-      '<a class="btn ' + (p.populair ? "btn-wa" : "btn-outline") + '" href="#boeken" data-pick="' + p.id + '">Maak afspraak</a>' +
+      '<div class="price"><b><sup>€</sup>' + p.prijs.toLocaleString("nl-BE") + '</b><small>Inclusief btw en verplaatsing</small></div>' +
+      '<details class="incl"><summary>Wat zit er allemaal in? <span aria-hidden="true">↓</span></summary><ul class="checks">' +
+        S.inbegrepen.map(function (i) { return "<li>" + esc(i) + "</li>"; }).join("") + "</ul></details>" +
+      '<a class="btn btn-teal" href="#boeken" data-pick="' + p.id + '">Maak afspraak <span aria-hidden="true">↗</span></a>' +
       "</article>";
   }).join("");
-  $("#inclList").innerHTML = S.inbegrepen.map(function (i) { return "<li>" + esc(i) + "</li>"; }).join("");
   cards.addEventListener("click", function (e) {
     var a = e.target.closest("[data-pick]");
     if (!a) return;
