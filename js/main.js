@@ -32,6 +32,20 @@
     });
   }
 
+  // Prijswidget bovenaan de homepage
+  var quote = $("#quote");
+  if (quote) {
+    var syncQuote = function () {
+      var r = $('input[name="qtype"]:checked', quote);
+      if (!r) return;
+      $("#quotePrice").textContent = euro(+r.dataset.prijs);
+      $("#quoteCta").dataset.pick = r.value;
+    };
+    quote.addEventListener("change", syncQuote);
+    quote.addEventListener("submit", function (e) { e.preventDefault(); });
+    syncQuote();
+  }
+
   // Boekingsformulier (enkel op de homepage)
   var form = $("#bookForm");
   if (form) {

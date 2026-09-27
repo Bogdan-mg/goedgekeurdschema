@@ -1,6 +1,6 @@
 <!--
 {"title": "Eendraadschema & situatieschema Antwerpen | Goedgekeurd Schema",
- "og_title": "Eendraadschema en situatieschema aan vaste prijs — Goedgekeurd Schema",
+ "og_title": "Eendraadschema en situatieschema aan vaste prijs | Goedgekeurd Schema",
  "description": "Eendraadschema en situatieschema laten opmaken in Antwerpen en omgeving, volgens het AREI. Vaste prijs vanaf {{prijs_vanaf}} incl. btw en verplaatsing. Boek via WhatsApp of e-mail.",
  "priority": 1.0}
 -->
@@ -8,74 +8,95 @@
     <section class="hero">
       <div class="wrap hero-in">
         <div class="hero-text">
-          <p class="eyebrow">✓ Volgens het AREI · Vaste prijs · Antwerpen en omgeving</p>
-          <h1>Je eendraadschema en situatieschema, <span class="hl">snel en zonder zorgen</span> in orde.</h1>
-          <p class="lead">Wij maken je elektrische schema's op volgens het AREI — voor je keuring, de verkoop van je woning of na een afkeuring. Vaste prijs vanaf <strong>{{prijs_vanaf}}</strong>, verplaatsing in {{werkgebied}} inbegrepen. Maak je afspraak via WhatsApp of e-mail en wij regelen de rest.</p>
+          <p class="eyebrow">Antwerpen en omgeving</p>
+          <h1>Je eendraadschema en situatieschema, <span class="hl">snel in orde</span></h1>
+          <p class="lead">Vaste prijs vanaf {{prijs_vanaf}}, verplaatsing inbegrepen. Wij komen langs, meten op en mailen je schema's binnen {{levertijd}} werkdagen.</p>
           <div class="hero-cta">
-            <a class="btn btn-teal btn-lg" href="#boeken"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg>Maak een afspraak</a>
-            <a class="btn btn-ghost btn-lg" href="#prijzen">Bekijk de prijzen</a>
-          </div>
-          <ul class="usp">
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Verplaatsing inbegrepen</li>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Binnen {{levertijd}} werkdagen in je mailbox</li>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Pas betalen als alles klaar is</li>
-          </ul>
-        </div>
-        <div class="hero-card" aria-hidden="true">
-          <div class="chat">
-            <div class="chat-head"><img src="img/favicon.svg" alt="" width="32" height="32"><div><b>Goedgekeurd Schema</b><small>online</small></div></div>
-            <div class="msg me">Hallo! Mijn keuring is afgekeurd, ik heb schema's nodig. Rijwoning van ± 100 m² in Berchem, 11 zekeringen.</div>
-            <div class="msg them">Hallo! Geen probleem 👍 Dat is ons pakket <b>Woning / duplex</b> aan €310. Past dinsdag 10u voor een bezoek?</div>
-            <div class="msg me">Perfect, tot dan!</div>
-            <div class="msg them">Genoteerd ✅ Je schema's zitten binnen {{levertijd}} werkdagen in je mailbox.</div>
+            <a class="btn btn-teal btn-lg" href="#boeken"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg>Afspraak maken</a>
+            <a class="btn btn-ghost btn-lg" data-wa="Hallo! Ik heb een vraag over een elektrisch schema." href="#"><svg class="ico ico-wa" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
           </div>
         </div>
+        <form class="quote" id="quote" aria-labelledby="quote-h">
+          <h2 id="quote-h" class="quote-h">Wat kost jouw schema?</h2>
+          <fieldset>
+            <legend class="sr-only">Type woning</legend>
+            <div class="quote-opts">{{hero_keuzes}}</div>
+          </fieldset>
+          <div class="quote-total" aria-live="polite">
+            <b id="quotePrice">{{prijs:app}}</b>
+            <span>eendraad- + situatieschema, incl. btw en verplaatsing</span>
+          </div>
+          <a class="btn btn-teal btn-block" id="quoteCta" href="#boeken" data-pick="app">Afspraak maken<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <p class="quote-note">Groter dan 450&nbsp;m²? <a data-wa="Hallo! Ik heb een prijs op maat nodig voor " href="#">Vraag een prijs op maat</a></p>
+        </form>
       </div>
     </section>
 
     <!-- VERTROUWEN -->
-    <section class="trust">
-      <div class="wrap trust-in">
-        <div><b>Vaste prijs</b><span>geen verrassingen achteraf</span></div>
-        <div><b>AREI-conform</b><span>aanvaard door de keurder</span></div>
-        <div><b>Flexibel</b><span>bezoek wanneer het jou past</span></div>
-        <div><b>Persoonlijk</b><span>rechtstreeks contact via WhatsApp</span></div>
-      </div>
+    <section class="trust" aria-label="Waarom Goedgekeurd Schema">
+      <ul class="wrap trust-in">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-receipt"/></svg><div><b>Vaste prijs</b><span>Geen verrassingen achteraf</span></div></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg><div><b>Volgens het AREI</b><span>Klaar voor de keurder</span></div></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg><div><b>Binnen {{levertijd}} werkdagen</b><span>Digitaal in je mailbox</span></div></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><div><b>Pas betalen achteraf</b><span>Als alles klaar is</span></div></li>
+      </ul>
     </section>
 
     <!-- DIENSTEN -->
     <section id="diensten" class="section">
       <div class="wrap">
         <div class="sec-head">
-          <div><p class="kicker">01 / Diensten</p><h2>Alles voor een goedgekeurd elektrisch dossier</h2></div>
-          <p>Van een ontbrekend schema tot een volledig afgekeurde keuring: wij brengen je dossier in orde en begeleiden je tot aan de herkeuring.</p>
+          <h2>Alles voor een goedgekeurd elektrisch dossier</h2>
+          <p>Van een ontbrekend schema tot een afgekeurde keuring: wij brengen je dossier in orde, tot aan de herkeuring.</p>
         </div>
-        <div class="svc">
-          <article><span class="card-ico" aria-hidden="true"><svg class="ico"><use href="#i-doc"/></svg></span><h3>Eendraadschema</h3><p>Het schema van je verdeelkast: alle kringen, differentieelschakelaars, automaten en kabelsecties, volgens het AREI.</p><a href="eendraadschema.html">Meer over het eendraadschema →</a></article>
-          <article><span class="card-ico" aria-hidden="true"><svg class="ico"><use href="#i-plan"/></svg></span><h3>Situatieschema</h3><p>De plattegrond van je woning met elk stopcontact, lichtpunt en toestel, en de kring waarop het zit.</p><a href="situatieschema.html">Meer over het situatieschema →</a></article>
-          <article><span class="card-ico" aria-hidden="true"><svg class="ico"><use href="#i-search"/></svg></span><h3>Afkeuring analyseren</h3><p>We overlopen je keuringsverslag en zetten elke inbreuk om in een concrete oplossing: wat moet er gebeuren, en wat niet.</p><a href="keuring-afgekeurd.html">Keuring afgekeurd? Lees verder →</a></article>
-          <article><span class="card-ico" aria-hidden="true"><svg class="ico"><use href="#i-chat"/></svg></span><h3>Offerte via je verslag</h3><p>Stuur een foto van je keuringsverslag via WhatsApp. Je krijgt een vrijblijvende prijs, zonder dat we eerst moeten langskomen.</p><a data-wa="Hallo! Ik wil graag een vrijblijvende offerte. Ik stuur een foto van mijn keuringsverslag." href="#">Stuur je verslag →</a></article>
+        <div class="bento">
+          <a class="tile tile-main" href="eendraadschema.html">
+            <svg class="ico tile-ico" aria-hidden="true"><use href="#i-doc"/></svg>
+            <h3>Eendraadschema</h3>
+            <p>Het schema van je verdeelkast: alle kringen, differentieelschakelaars, automaten en kabelsecties, getekend volgens het AREI.</p>
+            <span class="tile-link">Meer over het eendraadschema<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="tile tile-mint" href="situatieschema.html">
+            <svg class="ico tile-ico" aria-hidden="true"><use href="#i-plan"/></svg>
+            <h3>Situatieschema</h3>
+            <p>De plattegrond van je woning met elk stopcontact, lichtpunt en toestel, en de kring waarop het zit.</p>
+            <span class="tile-link">Meer over het situatieschema<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="tile" href="keuring-afgekeurd.html">
+            <svg class="ico tile-ico" aria-hidden="true"><use href="#i-search"/></svg>
+            <h3>Afkeuring analyseren</h3>
+            <p>We zetten elke inbreuk op je keuringsverslag om in een concrete oplossing.</p>
+            <span class="tile-link">Keuring afgekeurd?<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+          <div class="tile tile-wide">
+            <svg class="ico tile-ico" aria-hidden="true"><use href="#i-chat"/></svg>
+            <div>
+              <h3>Offerte via je keuringsverslag</h3>
+              <p>Stuur een foto van je verslag via WhatsApp. Je krijgt een vrijblijvende prijs, zonder dat we eerst moeten langskomen.</p>
+            </div>
+            <a class="btn btn-wa" data-wa="Hallo! Ik wil graag een vrijblijvende offerte. Ik stuur een foto van mijn keuringsverslag." href="#"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Verslag doorsturen</a>
+          </div>
         </div>
-        <div class="who">
-          <div><b>Particulieren</b><span>Verkoop, aankoop, verhuur of renovatie van je woning of appartement.</span></div>
-          <div><b>KMO's &amp; handelszaken</b><span>Winkels, kantoren en praktijkruimtes — prijs op maat.</span></div>
-          <div><b>Makelaars &amp; notarissen</b><span>Snel een conform dossier voor een vlotte verkoop. <a href="keuring-verkoop-woning.html">Keuring bij verkoop →</a></span></div>
-        </div>
+        <ul class="who">
+          <li><b>Particulieren</b><span>Verkoop, aankoop, verhuur of renovatie van je woning of appartement.</span></li>
+          <li><b>KMO's en handelszaken</b><span>Winkels, kantoren en praktijkruimtes, met een prijs op maat.</span></li>
+          <li><b>Makelaars en notarissen</b><span>Snel een conform dossier voor een vlotte verkoop. <a href="keuring-verkoop-woning.html">Keuring bij verkoop</a></span></li>
+        </ul>
       </div>
     </section>
 
-    <!-- HOE WERKT HET -->
+    <!-- WERKWIJZE -->
     <section id="hoe" class="section alt">
       <div class="wrap">
         <div class="sec-head">
-          <div><p class="kicker">02 / Werkwijze</p><h2>Zo eenvoudig werkt het</h2></div>
-          <p>Vier stappen, en jij hoeft bijna niets te doen. Alles regelen we via WhatsApp.</p>
+          <h2>Zo werkt het</h2>
+          <p>Vier stappen. Jij hoeft bijna niets te doen.</p>
         </div>
-        <ol class="steps">
-          <li><span class="num">1</span><h3>Stuur een WhatsApp</h3><p>Vertel ons kort wat je nodig hebt en waar je woont. Je krijgt meteen je vaste prijs.</p></li>
-          <li><span class="num">2</span><h3>Kies een moment</h3><p>We komen langs wanneer het jou past — ook 's avonds of op zaterdag, in overleg.</p></li>
-          <li><span class="num">3</span><h3>Wij meten op</h3><p>We brengen je verdeelbord en alle kringen in kaart. Duurt meestal 1 à 2 uur.</p></li>
-          <li><span class="num">4</span><h3>Schema's in je mailbox</h3><p>Binnen {{levertijd}} werkdagen ontvang je alles digitaal. Pas dan betaal je.</p></li>
+        <ol class="timeline">
+          <li><h3>Afspraak maken</h3><p>Via WhatsApp of e-mail. Je krijgt meteen je vaste prijs.</p></li>
+          <li><h3>Moment kiezen</h3><p>We komen wanneer het jou past, ook 's avonds of op zaterdag.</p></li>
+          <li><h3>Opmeten</h3><p>We brengen je verdeelkast en alle kringen in kaart. Meestal 1 à 2 uur.</p></li>
+          <li><h3>Schema's ontvangen</h3><p>Binnen {{levertijd}} werkdagen in je mailbox. Pas dan betaal je.</p></li>
         </ol>
       </div>
     </section>
@@ -84,51 +105,36 @@
     <section id="prijzen" class="section">
       <div class="wrap">
         <div class="sec-head">
-          <div><p class="kicker">03 / Elektrische schema's</p><h2>Elektrisch schema opstellen: wat kost het?</h2></div>
-          <p>Vaste tarieven, inclusief btw en verplaatsing in {{werkgebied}}. Let op de oppervlakte én het aantal zekeringen.</p>
+          <p class="kicker">Vaste prijzen</p>
+          <h2>Elektrisch schema opstellen: wat kost het?</h2>
+          <p>Eendraad- en situatieschema samen, inclusief btw en verplaatsing in {{werkgebied}}. Let op de oppervlakte én het aantal zekeringen.</p>
         </div>
         {{cards}}
-        <p class="hint center">Weet je niet hoeveel zekeringen je hebt? Tel de automaten in je verdeelkast — of stuur ons gewoon een foto via WhatsApp.</p>
-        <p class="onreq center">{{opAanvraag}}</p>
+        <p class="hint">Weet je niet hoeveel zekeringen je hebt? Tel de automaten in je verdeelkast, of <a data-wa="Hallo! Ik stuur een foto van mijn verdeelkast. Welk pakket heb ik nodig?" href="#">stuur ons een foto</a>.</p>
+        <p class="onreq">{{opAanvraag}}</p>
       </div>
     </section>
 
     <!-- AFGEKEURD -->
     <section id="afgekeurd" class="section alt">
-      <div class="wrap split">
+      <div class="wrap split split-top">
+        <div class="split-copy">
+          <h2>Keuring afgekeurd? Geen paniek.</h2>
+          <p>Een negatieve keuring komt vaak voor, zeker bij oudere woningen of bij verkoop. Heel vaak ontbreken gewoon de schema's. Je krijgt een termijn om alles op te lossen en een herkeuring te laten doen. Hoe sneller je begint, hoe beter.</p>
+          <p>Wij tekenen de ontbrekende schema's en zetten elke inbreuk om in een duidelijke oplossing. Zo weet je precies wat een elektricien nog moet doen, en wat niet.</p>
+          <a class="btn btn-wa" data-wa="Hallo! Mijn elektrische keuring is afgekeurd. Kunnen jullie helpen? Ik stuur een foto van het verslag." href="#"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Verslag doorsturen</a>
+          <p class="more"><a href="keuring-afgekeurd.html">Stappenplan, termijnen en herkeuring<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+        </div>
         <div>
-          <p class="kicker">04 / Keuring afgekeurd?</p>
-          <h2>Geen paniek. Wij helpen je naar een goedkeuring.</h2>
-          <p>Een negatieve keuring komt heel vaak voor, zeker bij oudere woningen of bij verkoop. Heel vaak ontbreken gewoon de schema's. Na een afkeuring krijg je een termijn om de inbreuken op te lossen en een herkeuring te laten doen — hoe sneller je begint, hoe beter.</p>
-          <ul class="checks">
-            <li>We tekenen de ontbrekende eendraad- en situatieschema's</li>
-            <li>We overlopen je keuringsverslag en zetten elke inbreuk om in een duidelijke oplossing</li>
-            <li>Je weet precies wat een elektricien nog moet doen — en wat niet</li>
-            <li>Je bent klaar voor een vlotte herkeuring</li>
+          <h3 class="list-h">Veelvoorkomende inbreuken</h3>
+          <ul class="issues">
+            <li class="us"><div><b>Documentatie en dossier</b><p>Ontbrekende, verouderde of onvolledige eendraad- en situatieschema's. De meest voorkomende reden voor een afkeuring.</p></div><span class="tag">Lossen wij op</span></li>
+            <li><div><b>Aarding</b><p>Aardelektrode ontbreekt of is defect, te hoge aardspreidingsweerstand, ontbrekende verbinding met gas-, water- of cv-leidingen.</p></div><span class="tag tag-soft">Advies</span></li>
+            <li><div><b>Differentieel en zekeringen</b><p>Verkeerd type differentieelschakelaar, ontbrekende labels of een onlogische kringindeling.</p></div><span class="tag tag-soft">Advies</span></li>
+            <li><div><b>Leidingen en bedrading</b><p>Te dunne kabels voor het vermogen of de zekering waarop ze aangesloten zijn.</p></div><span class="tag tag-soft">Advies</span></li>
+            <li><div><b>Vochtige ruimtes</b><p>Stopcontacten of schakelaars met een te lage IP-graad in de badkamer, wasplaats of buiten.</p></div><span class="tag tag-soft">Advies</span></li>
           </ul>
-          <a class="btn btn-wa" data-wa="Hallo! Mijn elektrische keuring is afgekeurd. Kunnen jullie helpen? Ik stuur een foto van het verslag." href="#"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Stuur je verslag voor een vrijblijvende offerte</a>
-          <p class="more"><a href="keuring-afgekeurd.html">Alles over een afgekeurde keuring: termijnen, herkeuring en stappenplan →</a></p>
         </div>
-        <div class="doc" aria-hidden="true">
-          <div class="doc-row"><span class="dot bad"></span>Eendraadschema ontbreekt</div>
-          <div class="doc-row"><span class="dot bad"></span>Situatieschema ontbreekt</div>
-          <div class="doc-row"><span class="dot bad"></span>Kringen niet aangeduid</div>
-          <div class="doc-arrow">↓</div>
-          <div class="doc-row ok"><span class="dot good"></span>Schema's opgemaakt</div>
-          <div class="doc-row ok"><span class="dot good"></span>Kringen genummerd</div>
-          <div class="stamp">GOEDGEKEURD</div>
-        </div>
-      </div>
-      <div class="wrap inbr">
-        <h3 class="inbr-title">Veelvoorkomende inbreuken <span>— één inbreuk is genoeg voor een afkeuring</span></h3>
-        <div class="inbr-grid">
-          <article class="us"><span class="tag">Lossen wij op</span><h4>Documentatie &amp; dossier</h4><p>Ontbrekende, verouderde of onvolledige eendraad- en situatieschema's. De meest voorkomende reden voor een afkeuring.</p></article>
-          <article><span class="tag grey">Advies</span><h4>Aarding &amp; equipotentiale verbindingen</h4><p>Aardelektrode ontbreekt of is defect, te hoge aardspreidingsweerstand, ontbrekende verbinding met gas-, water- of cv-leidingen.</p></article>
-          <article><span class="tag grey">Advies</span><h4>Differentieel &amp; zekeringen</h4><p>Verkeerd type differentieelschakelaar, ontbrekende labels of een onlogische kringindeling in de verdeelkast.</p></article>
-          <article><span class="tag grey">Advies</span><h4>Leidingen &amp; bedrading</h4><p>Te dunne kabels voor het vermogen of de zekering waarop ze aangesloten zijn.</p></article>
-          <article><span class="tag grey">Advies</span><h4>Veiligheid &amp; materialen</h4><p>Onvoldoende IP-graad van stopcontacten en schakelaars, vooral in de badkamer en andere vochtige ruimtes.</p></article>
-        </div>
-        <p class="inbr-note">Bij technische inbreuken zeggen we je precies wat een elektricien moet aanpassen — zo weet je vooraf waar je aan toe bent en verloopt de herkeuring vlot.</p>
       </div>
     </section>
 
@@ -136,17 +142,17 @@
     <section id="boeken" class="section">
       <div class="wrap">
         <div class="sec-head">
-          <div><p class="kicker">05 / Afspraak maken</p><h2>Boek in 30 seconden</h2></div>
+          <h2>Afspraak maken</h2>
           <p>Vul in wat je weet en kies hoe je je aanvraag verstuurt: via WhatsApp of per e-mail. Je betaalt pas als je schema's klaar zijn.</p>
         </div>
         <form class="book" id="bookForm" novalidate>
           <div class="grid2">
-            <label>Je naam<input name="naam" autocomplete="name" placeholder="bv. Sarah Peeters" required></label>
-            <label>Gemeente / postcode<input name="gemeente" autocomplete="address-level2" placeholder="bv. 2600 Berchem" required></label>
+            <label>Je naam<input name="naam" autocomplete="name" placeholder="bv. Sarah Peeters…" required></label>
+            <label>Gemeente / postcode<input name="gemeente" autocomplete="address-level2" placeholder="bv. 2600 Berchem…" required></label>
           </div>
           <div class="grid2">
-            <label>E-mailadres <small>(nodig bij e-mail)</small><input name="email" type="email" autocomplete="email" inputmode="email" placeholder="bv. sarah@voorbeeld.be"></label>
-            <label>Telefoon <small>(optioneel)</small><input name="telefoon" type="tel" autocomplete="tel" inputmode="tel" placeholder="bv. 0470 12 34 56"></label>
+            <label>E-mailadres <small>(nodig bij e-mail)</small><input name="email" type="email" autocomplete="email" inputmode="email" placeholder="bv. sarah@voorbeeld.be…" spellcheck="false" autocapitalize="off"></label>
+            <label>Telefoon <small>(optioneel)</small><input name="telefoon" type="tel" autocomplete="tel" inputmode="tel" placeholder="bv. 0470 12 34 56…"></label>
           </div>
           <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <fieldset>
@@ -157,7 +163,7 @@
             <label>Waarvoor?
               <select name="reden">
                 <option>Keuring (eerste keer)</option>
-                <option>Afgekeurd — herkeuring</option>
+                <option>Afgekeurd, herkeuring nodig</option>
                 <option>Verkoop van de woning</option>
                 <option>Verhuur</option>
                 <option>Renovatie / eigen dossier</option>
@@ -185,52 +191,35 @@
               </div>
             </div>
           </div>
-          <p class="formerr" id="formErr" role="alert"></p>
+          <p class="formerr" id="formErr" role="alert" aria-live="polite"></p>
         </form>
         <div class="book book-ok" id="bookOk" hidden tabindex="-1">
           <span class="ok-ico" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
           <h3>Bedankt, je aanvraag is verstuurd!</h3>
           <p>We hebben je aanvraag goed ontvangen en nemen zo snel mogelijk contact met je op om een moment af te spreken. Je krijgt ook een bevestiging in je mailbox.</p>
-          <p class="more"><a data-wa="Hallo! Ik heb net een afspraak aangevraagd via de website." href="#">Liever meteen chatten? Stuur ons een WhatsApp →</a></p>
+          <p class="more"><a data-wa="Hallo! Ik heb net een afspraak aangevraagd via de website." href="#">Liever meteen chatten? Stuur ons een WhatsApp</a></p>
         </div>
       </div>
     </section>
 
     <!-- WERKGEBIED -->
     <section id="werkgebied" class="section">
-      <div class="wrap split">
-        <div>
-          <p class="kicker">06 / Werkgebied</p>
-          <h2>We komen naar je toe, in {{werkgebied}}</h2>
-          <p>We werken in Antwerpen en de omliggende gemeenten, voor particulieren, makelaars en KMO's. De verplaatsing zit altijd in de prijs.</p>
-          <p class="more"><a data-wa="Hallo! Komen jullie ook in mijn gemeente? Ik woon in " href="#">Woon je net buiten deze lijst? Vraag het even →</a></p>
-        </div>
+      <div class="wrap area">
+        <p class="kicker">Werkgebied</p>
+        <h2>We komen naar je toe in {{werkgebied}}</h2>
+        <p>Voor particulieren, makelaars en KMO's. De verplaatsing zit altijd in de prijs.</p>
         <ul class="regions" aria-label="Gemeenten in ons werkgebied">
           {{gemeenten}}
         </ul>
-      </div>
-    </section>
-
-    <!-- GIDSEN -->
-    <section class="section alt">
-      <div class="wrap">
-        <div class="sec-head">
-          <div><p class="kicker">07 / Handig om te weten</p><h2>Alles over schema's en keuringen</h2></div>
-          <p>Duidelijke uitleg zonder vakjargon, zodat je weet wat je nodig hebt vóór je keuring.</p>
-        </div>
-        <div class="guides">
-          <a href="eendraadschema.html"><b>Wat is een eendraadschema?</b><span>Wat erop staat, wanneer je het nodig hebt en wat het kost.</span></a>
-          <a href="situatieschema.html"><b>Wat is een situatieschema?</b><span>Het verschil met een eendraadschema, uitgelegd.</span></a>
-          <a href="keuring-afgekeurd.html"><b>Keuring afgekeurd: wat nu?</b><span>Stappenplan, termijnen en herkeuring.</span></a>
-          <a href="keuring-verkoop-woning.html"><b>Keuring bij verkoop</b><span>Wat verkopers en kopers moeten weten.</span></a>
-        </div>
+        <p class="more"><a data-wa="Hallo! Komen jullie ook in mijn gemeente? Ik woon in " href="#">Woon je net buiten deze lijst? Vraag het even<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
       </div>
     </section>
 
     <!-- FAQ -->
     <section id="faq" class="section alt">
-      <div class="wrap narrow">
-        <p class="kicker center">08 / FAQ</p><h2 class="center">Veelgestelde vragen</h2>
+      <div class="wrap faq-grid">
+        <div>
+        <h2>Veelgestelde vragen</h2>
         <details class="faq-q"><summary>Wat is een eendraadschema?</summary><p>Een eendraadschema toont je verdeelbord en alle kringen met hun beveiliging (differentieel, automaten, kabelsecties). Het is verplicht bij een elektrische keuring volgens het AREI.</p></details>
         <details class="faq-q"><summary>Wat is een situatieschema?</summary><p>Een situatieschema is een plattegrond van je woning waarop alle stopcontacten, schakelaars, lichtpunten en toestellen staan, met het nummer van de kring waarop ze aangesloten zijn.</p></details>
         <details class="faq-q"><summary>Heb ik die schema's nodig?</summary><p>Ja, bij de verkoop van een woning, bij een nieuwe installatie en bij een herkeuring vraagt de keurder altijd een eendraad- en situatieschema. Zonder schema's volgt bijna altijd een afkeuring.</p></details>
@@ -241,6 +230,13 @@
         <details class="faq-q"><summary>Zijn er extra kosten?</summary><p>Nee. De prijs is vast, inclusief btw en verplaatsing in {{werkgebied}}. De keuring zelf door een erkend keuringsorganisme is niet inbegrepen.</p></details>
         <details class="faq-q"><summary>Doen jullie ook de keuring zelf?</summary><p>De keuring gebeurt door een erkend keuringsorganisme. Met onze schema's ben je daar volledig op voorbereid.</p></details>
         <details class="faq-q"><summary>Moet ik thuis zijn?</summary><p>We hebben toegang nodig tot je verdeelkast en alle ruimtes. Kan je er zelf niet zijn? Iemand anders (makelaar, buur, familie) mag ons ook binnenlaten.</p></details>
+        </div>
+        <aside class="guides" aria-labelledby="guides-h">
+          <h3 id="guides-h">Meer lezen</h3>
+          <a href="eendraadschema.html"><b>Wat is een eendraadschema?</b><span>Wat erop staat, wanneer je het nodig hebt en wat het kost.</span></a>
+          <a href="situatieschema.html"><b>Wat is een situatieschema?</b><span>Het verschil met een eendraadschema, uitgelegd.</span></a>
+          <a href="keuring-afgekeurd.html"><b>Keuring afgekeurd: wat nu?</b><span>Stappenplan, termijnen en herkeuring.</span></a>
+          <a href="keuring-verkoop-woning.html"><b>Keuring bij verkoop</b><span>Wat verkopers en kopers moeten weten.</span></a>
+        </aside>
       </div>
     </section>
-

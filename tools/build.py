@@ -54,9 +54,9 @@ def render_cards(S):
             f'<h3>{esc(p["naam"])}</h3>'
             f'<p class="card-sub">Tot <b>{p["m2"]} m²</b><br>Tot <b>{p["zekeringen"]} zekeringen</b></p>'
             f'<div class="price"><b><sup>€</sup>{p["prijs"]:,}</b><small>Inclusief btw en verplaatsing</small></div>'.replace(",", ".")
-            + f'<details class="incl"><summary>Wat zit er allemaal in? <span aria-hidden="true">↓</span></summary>'
+            + f'<details class="incl"><summary>Wat zit er allemaal in?</summary>'
             f'<ul class="checks">{incl}</ul></details>'
-            f'<a class="btn btn-teal" href="./#boeken" data-pick="{p["id"]}">Maak afspraak <span aria-hidden="true">↗</span></a>'
+            f'<a class="btn btn-teal btn-block" href="./#boeken" data-pick="{p["id"]}">Afspraak maken<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>'
             f"</article>"
         )
     return '<div class="cards">' + "".join(out) + "</div>"
@@ -83,6 +83,16 @@ def render_choices(S):
     return "".join(out)
 
 
+def render_hero_choices(S):
+    out = []
+    for i, p in enumerate(S["pakketten"]):
+        out.append(
+            f'<label class="qopt"><input type="radio" name="qtype" value="{p["id"]}" data-prijs="{p["prijs"]}"{" checked" if i == 0 else ""}>'
+            f'<span><b>{esc(p["naam"])}</b><small>tot {p["m2"]}\u00a0m², tot {p["zekeringen"]} zekeringen</small></span></label>'
+        )
+    return "".join(out)
+
+
 def business(S):
     b = {
         "@type": "Electrician",
@@ -94,14 +104,14 @@ def business(S):
         "description": "Eendraadschema's en situatieschema's volgens het AREI, aan een vaste prijs. Verplaatsing in " + S["werkgebied"] + " inbegrepen.",
         "areaServed": [{"@type": "City", "name": g} for g in S["gemeenten"]],
         "knowsLanguage": "nl-BE",
-        "priceRange": euro(min(p["prijs"] for p in S["pakketten"])) + " – " + euro(max(p["prijs"] for p in S["pakketten"])),
+        "priceRange": euro(min(p["prijs"] for p in S["pakketten"])) + " - " + euro(max(p["prijs"] for p in S["pakketten"])),
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Eendraadschema + situatieschema",
             "itemListElement": [
                 {
                     "@type": "Offer",
-                    "name": f'Eendraad- en situatieschema — {p["naam"]} (tot {p["m2"]} m², tot {p["zekeringen"]} zekeringen)',
+                    "name": f'Eendraad- en situatieschema: {p["naam"]} (tot {p["m2"]} m², tot {p["zekeringen"]} zekeringen)',
                     "price": str(p["prijs"]),
                     "priceCurrency": "EUR",
                     "priceSpecification": {"@type": "PriceSpecification", "price": str(p["prijs"]), "priceCurrency": "EUR", "valueAddedTaxIncluded": True},
@@ -161,6 +171,7 @@ def build():
     tokens = {
         "{{cards}}": render_cards(S),
         "{{keuzes}}": render_choices(S),
+        "{{hero_keuzes}}": render_hero_choices(S),
         "{{levertijd}}": str(S["levertijdWerkdagen"]),
         "{{werkgebied}}": esc(S["werkgebied"]),
         "{{gemeenten}}": "".join(f"<li>{esc(g)}</li>" for g in S["gemeenten"]),
