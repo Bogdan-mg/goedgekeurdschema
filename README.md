@@ -80,3 +80,15 @@ Wat je zelf nog moet doen (dit heeft de grootste impact):
    om naar je site te linken.
 5. **Wettelijke info**: vul `bedrijfsnaam`, `adres` en `ondernemingsnummer` in `js/config.js` in —
    dat is verplicht op een Belgische bedrijfswebsite en versterkt ook het vertrouwen bij Google.
+
+## Skills voor Claude
+
+In `.claude/skills/` staan skills die Claude automatisch gebruikt bij werk aan deze site:
+
+| Skill | Bron | Waarvoor |
+|---|---|---|
+| `taste-skill` | Leonxlnx/taste-skill (MIT) | Mooie, niet-generieke ontwerpen |
+| `image-to-code` | Leonxlnx/taste-skill (MIT) | Ontwerp vanuit (gegenereerde) afbeeldingen naar code |
+| `web-design-guidelines` | vercel-labs/agent-skills | UI-controle op toegankelijkheid en best practices |
+| `awesome-design-md` | VoltAgent/awesome-design-md (MIT) | 70+ design systems als inspiratie |
+| `playwright-cli` | microsoft/playwright-cli (Apache-2.0) | Site testen in een echte browser |
