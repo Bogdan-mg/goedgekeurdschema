@@ -171,9 +171,18 @@
     });
   }
 
-  // Zwevende knop verbergen zolang de grote knoppen bovenaan zichtbaar zijn
-  var fab = $(".fab"), hero = $(".hero-cta");
-  if (fab && hero && "IntersectionObserver" in window) {
-    new IntersectionObserver(function (en) { fab.classList.toggle("hide", en[0].isIntersecting); }).observe(hero);
+  // Zwevende knop en mobiele balk verbergen zolang de grote knoppen bovenaan
+  // of het afsprakenformulier in beeld zijn (dubbele knoppen = extra keuzestress)
+  var fab = $(".fab"), mbar = $(".mbar");
+  var watch = $$(".hero-cta, .page-hero .hero-cta, #boeken");
+  if ("IntersectionObserver" in window && watch.length) {
+    var zichtbaar = new Set();
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { en.isIntersecting ? zichtbaar.add(en.target) : zichtbaar.delete(en.target); });
+      var verberg = zichtbaar.size > 0;
+      if (fab) fab.classList.toggle("hide", verberg);
+      if (mbar) mbar.classList.toggle("hide", verberg);
+    });
+    watch.forEach(function (el) { io.observe(el); });
   }
 })();

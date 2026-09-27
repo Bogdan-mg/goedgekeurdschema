@@ -57,6 +57,14 @@ window.SITE = {
     "Verplaatsing in Antwerpen en omgeving",
   ],
 
+  // Reviews van echte klanten (verschijnen pas op de site als je er toevoegt).
+  // Voorbeeld: { naam: "Voornaam N.", gemeente: "Berchem", tekst: "..." }
+  reviews: [],
+
+  // Over jou (het blok verschijnt pas als 'tekst' ingevuld is).
+  // foto: bv. "img/over.jpg" (vierkant, minstens 600x600 px)
+  over: { naam: "", tekst: "", foto: "" },
+
   // Groter of anders → op aanvraag
   opAanvraag: "Groter dan 450 m², meer dan 40 zekeringen, een handelszaak of een appartementsgebouw? Stuur ons een berichtje voor een prijs op maat.",
 };

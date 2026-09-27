@@ -98,6 +98,30 @@ def render_hero_choices(S):
     return "".join(out)
 
 
+def render_reviews(S):
+    revs = S.get("reviews") or []
+    if not revs:
+        return ""
+    items = "".join(
+        f'<figure class="review"><blockquote>{esc(r["tekst"])}</blockquote>'
+        f'<figcaption><b>{esc(r["naam"])}</b>{(" uit " + esc(r["gemeente"])) if r.get("gemeente") else ""}</figcaption></figure>'
+        for r in revs
+    )
+    return ('\n    <!-- REVIEWS -->\n    <section id="reviews" class="section">\n      <div class="wrap">\n'
+            '        <div class="sec-head"><h2>Wat klanten zeggen</h2></div>\n'
+            f'        <div class="reviews">{items}</div>\n      </div>\n    </section>\n')
+
+
+def render_over(S):
+    o = S.get("over") or {}
+    if not o.get("tekst"):
+        return ""
+    foto = f'<img class="over-foto" src="{esc(o["foto"])}" alt="{esc(o.get("naam") or S["naam"])}" width="360" height="360" loading="lazy">' if o.get("foto") else ""
+    titel = f'Hallo, ik ben {esc(o["naam"])}' if o.get("naam") else "Over ons"
+    return ('\n    <!-- OVER -->\n    <section id="over" class="section">\n'
+            f'      <div class="wrap over">{foto}<div><h2>{titel}</h2><p>{esc(o["tekst"])}</p></div></div>\n    </section>\n')
+
+
 def business(S):
     b = {
         "@type": "Electrician",
@@ -177,6 +201,8 @@ def build():
         "{{cards}}": render_cards(S),
         "{{keuzes}}": render_choices(S),
         "{{hero_keuzes}}": render_hero_choices(S),
+        "{{reviews}}": render_reviews(S),
+        "{{over}}": render_over(S),
         "{{levertijd}}": str(S["levertijdWerkdagen"]),
         "{{werkgebied}}": esc(S["werkgebied"]),
         "{{gemeenten}}": "".join(f"<li>{esc(g)}</li>" for g in S["gemeenten"]),
