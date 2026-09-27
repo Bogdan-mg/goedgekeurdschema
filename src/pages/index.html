@@ -1,16 +1,16 @@
 <!--
-{"title": "Eendraadschema & situatieschema vanaf {{prijs_vanaf}} | Goedgekeurd Schema",
+{"title": "Eendraadschema & situatieschema Antwerpen | Goedgekeurd Schema",
  "og_title": "Eendraadschema en situatieschema aan vaste prijs — Goedgekeurd Schema",
- "description": "Eendraadschema en situatieschema laten opmaken volgens het AREI. Vaste prijs vanaf {{prijs_vanaf}}, incl. btw en verplaatsing. Binnen {{levertijd}} werkdagen klaar. Boek via WhatsApp.",
+ "description": "Eendraadschema en situatieschema laten opmaken in Antwerpen en omgeving, volgens het AREI. Vaste prijs vanaf {{prijs_vanaf}} incl. btw en verplaatsing. Boek via WhatsApp.",
  "priority": 1.0}
 -->
     <!-- HERO -->
     <section class="hero">
       <div class="wrap hero-in">
         <div class="hero-text">
-          <p class="eyebrow">✓ Volgens het AREI · Vaste prijs · Heel België</p>
+          <p class="eyebrow">✓ Volgens het AREI · Vaste prijs · Antwerpen en omgeving</p>
           <h1>Je eendraadschema en situatieschema, <span class="hl">snel en zonder zorgen</span> in orde.</h1>
-          <p class="lead">Wij maken je elektrische schema's op volgens het AREI — voor je keuring, de verkoop van je woning of na een afkeuring. Vaste prijs vanaf <strong>{{prijs_vanaf}}</strong>, verplaatsing inbegrepen. Eén berichtje via WhatsApp en wij regelen de rest.</p>
+          <p class="lead">Wij maken je elektrische schema's op volgens het AREI — voor je keuring, de verkoop van je woning of na een afkeuring. Vaste prijs vanaf <strong>{{prijs_vanaf}}</strong>, verplaatsing in {{werkgebied}} inbegrepen. Eén berichtje via WhatsApp en wij regelen de rest.</p>
           <div class="hero-cta">
             <a class="btn btn-wa btn-lg" href="#boeken"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Boek via WhatsApp</a>
             <a class="btn btn-ghost btn-lg" href="#prijzen">Bekijk de prijzen</a>
@@ -24,7 +24,7 @@
         <div class="hero-card" aria-hidden="true">
           <div class="chat">
             <div class="chat-head"><img src="img/favicon.svg" alt="" width="32" height="32"><div><b>Goedgekeurd Schema</b><small>online</small></div></div>
-            <div class="msg me">Hallo! Mijn keuring is afgekeurd, ik heb schema's nodig. Rijwoning van ± 100 m² in Gent, 11 zekeringen.</div>
+            <div class="msg me">Hallo! Mijn keuring is afgekeurd, ik heb schema's nodig. Rijwoning van ± 100 m² in Berchem, 11 zekeringen.</div>
             <div class="msg them">Hallo! Geen probleem 👍 Dat is ons pakket <b>Woning / duplex</b> aan €310. Past dinsdag 10u voor een bezoek?</div>
             <div class="msg me">Perfect, tot dan!</div>
             <div class="msg them">Genoteerd ✅ Je schema's zitten binnen {{levertijd}} werkdagen in je mailbox.</div>
@@ -142,7 +142,7 @@
         <form class="book" id="bookForm" novalidate>
           <div class="grid2">
             <label>Je naam<input name="naam" autocomplete="name" placeholder="bv. Sarah Peeters" required></label>
-            <label>Gemeente / postcode<input name="gemeente" autocomplete="address-level2" placeholder="bv. 9000 Gent" required></label>
+            <label>Gemeente / postcode<input name="gemeente" autocomplete="address-level2" placeholder="bv. 2600 Berchem" required></label>
           </div>
           <fieldset>
             <legend>Type woning</legend>
@@ -185,11 +185,11 @@
         <div>
           <p class="kicker">06 / Werkgebied</p>
           <h2>We komen naar je toe, in {{werkgebied}}</h2>
-          <p>De verplaatsing zit altijd in de prijs, waar je ook woont. We werken voor particulieren, makelaars en KMO's in alle provincies.</p>
-          <p class="more"><a data-wa="Hallo! Komen jullie ook in mijn gemeente? Ik woon in " href="#">Twijfel je of we tot bij jou komen? Vraag het even →</a></p>
+          <p>We werken in Antwerpen en de omliggende gemeenten, voor particulieren, makelaars en KMO's. De verplaatsing zit altijd in de prijs.</p>
+          <p class="more"><a data-wa="Hallo! Komen jullie ook in mijn gemeente? Ik woon in " href="#">Woon je net buiten deze lijst? Vraag het even →</a></p>
         </div>
-        <ul class="regions" aria-label="Provincies en regio's">
-          <li>Antwerpen</li><li>Oost-Vlaanderen</li><li>West-Vlaanderen</li><li>Vlaams-Brabant</li><li>Limburg</li><li>Brussel</li><li>Waals-Brabant</li><li>Henegouwen</li><li>Luik</li><li>Namen</li><li>Luxemburg</li>
+        <ul class="regions" aria-label="Gemeenten in ons werkgebied">
+          {{gemeenten}}
         </ul>
       </div>
     </section>

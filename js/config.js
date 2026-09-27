@@ -24,7 +24,13 @@ window.SITE = {
 
   // Levertijd en werkgebied
   levertijdWerkdagen: 10,
-  werkgebied: "heel België",
+  werkgebied: "Antwerpen en omgeving",
+  // Gemeenten die op de site vermeld worden (ook voor Google)
+  gemeenten: [
+    "Antwerpen", "Berchem", "Borgerhout", "Deurne", "Ekeren", "Hoboken", "Merksem", "Wilrijk",
+    "Mortsel", "Edegem", "Kontich", "Aartselaar", "Hove", "Boechout", "Wommelgem", "Wijnegem",
+    "Schoten", "Brasschaat", "Kapellen", "Stabroek", "Zwijndrecht", "Hemiksem", "Schelle", "Ranst",
+  ],
 
   // Pakketten: eendraadschema + situatieschema. Prijzen in euro, incl. btw en verplaatsing.
   pakketten: [
@@ -41,7 +47,7 @@ window.SITE = {
     "Situatieschema van alle verdiepingen",
     "Legende met gebruikte symbolen",
     "Digitaal (PDF) in je mailbox",
-    "Verplaatsing in heel België",
+    "Verplaatsing in Antwerpen en omgeving",
   ],
 
   // Groter of anders → op aanvraag

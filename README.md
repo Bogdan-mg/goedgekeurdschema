@@ -50,7 +50,8 @@ Wat je zelf nog moet doen (dit heeft de grootste impact):
    - Voeg een *domeineigendom* toe voor `goedgekeurdschema.be` en bevestig via het TXT-record bij je registrar.
    - Menu *Sitemaps* → dien `sitemap.xml` in.
 2. **Google Bedrijfsprofiel** — <https://business.google.com>
-   - Maak een profiel aan als *servicegebied-bedrijf* (je adres hoeft niet zichtbaar te zijn).
+   - Maak een profiel aan als *servicegebied-bedrijf* (je adres hoeft niet zichtbaar te zijn),
+     met als servicegebied Antwerpen en de omliggende gemeenten.
    - Categorie bv. "Elektricien" of "Adviesbureau elektrotechniek", werkgebied, openingsuren,
      link naar de website en je WhatsApp-nummer.
    - Vraag elke tevreden klant om een **Google-review**. Reviews zijn de belangrijkste factor om
