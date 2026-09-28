@@ -57,6 +57,14 @@ window.SITE = {
     "Verplaatsing in Antwerpen en omgeving",
   ],
 
+  // Extra werk tegen meerprijs. prijs: null = "prijs op maat", of bv. 95 = "vanaf € 95".
+  extras: [
+    { id: "diff", naam: "Differentieelschakelaar plaatsen of vervangen",
+      uitleg: "Bv. een ontbrekende of verkeerde differentieel (30 mA of 300 mA, type A).", prijs: null },
+    { id: "zek", naam: "Zekeringen (automaten) vervangen of bijplaatsen",
+      uitleg: "Bv. een verkeerd kaliber, verouderde smeltzekeringen of een extra kring.", prijs: null },
+  ],
+
   // Reviews van echte klanten (verschijnen pas op de site als je er toevoegt).
   // Voorbeeld: { naam: "Voornaam N.", gemeente: "Berchem", tekst: "..." }
   reviews: [],

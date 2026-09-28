@@ -98,6 +98,31 @@ def render_hero_choices(S):
     return "".join(out)
 
 
+def extra_prijs(x):
+    return f"meerprijs vanaf {euro(x['prijs'])}" if x.get("prijs") else "meerprijs, prijs op maat"
+
+
+def render_extras(S):
+    ex = S.get("extras") or []
+    if not ex:
+        return ""
+    rows = "".join(
+        f'<li><div><b>{esc(x["naam"])}</b><p>{esc(x.get("uitleg", ""))}</p></div><span class="tag tag-soft">{esc(extra_prijs(x))}</span></li>'
+        for x in ex
+    )
+    return ('<div class="extras"><h3>Extra: differentieel en zekeringen</h3>'
+            '<p>Staat er op je keuringsverslag een inbreuk op je differentieel of zekeringen? Dan kunnen we die meteen mee oplossen, tegen een meerprijs. Je krijgt de prijs altijd vooraf.</p>'
+            f'<ul class="issues">{rows}</ul>'
+            '<p class="more"><a data-wa="Hallo! Ik wil graag een prijs voor het vervangen van mijn differentieel of zekeringen. Ik stuur een foto van mijn verdeelkast / keuringsverslag." href="#">Vraag een prijs via WhatsApp<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></p></div>')
+
+
+def render_extra_choices(S):
+    return "".join(
+        f'<label class="chip"><input type="checkbox" name="extra" value="{esc(x["naam"])}"><span><b>{esc(x["naam"])}</b><small>{esc(extra_prijs(x))}</small></span></label>'
+        for x in (S.get("extras") or [])
+    )
+
+
 def render_reviews(S):
     revs = S.get("reviews") or []
     if not revs:
@@ -202,6 +227,8 @@ def build():
         "{{keuzes}}": render_choices(S),
         "{{hero_keuzes}}": render_hero_choices(S),
         "{{reviews}}": render_reviews(S),
+        "{{extras}}": render_extras(S),
+        "{{extra_keuzes}}": render_extra_choices(S),
         "{{over}}": render_over(S),
         "{{levertijd}}": str(S["levertijdWerkdagen"]),
         "{{werkgebied}}": esc(S["werkgebied"]),

@@ -114,6 +114,7 @@
         {{cards}}
         <p class="hint">Weet je niet hoeveel zekeringen je hebt? Tel de automaten in je verdeelkast, of <a data-wa="Hallo! Ik stuur een foto van mijn verdeelkast. Welk pakket heb ik nodig?" href="#">stuur ons een foto</a>.</p>
         <p class="onreq">{{opAanvraag}}</p>
+        {{extras}}
       </div>
     </section>
 
@@ -132,7 +133,7 @@
           <ul class="issues">
             <li class="us"><div><b>Documentatie en dossier</b><p>Ontbrekende, verouderde of onvolledige eendraad- en situatieschema's. De meest voorkomende reden voor een afkeuring.</p></div><span class="tag">Lossen wij op</span></li>
             <li><div><b>Aarding</b><p>Aardelektrode ontbreekt of is defect, te hoge aardspreidingsweerstand, ontbrekende verbinding met gas-, water- of cv-leidingen.</p></div><span class="tag tag-soft">Advies</span></li>
-            <li><div><b>Differentieel en zekeringen</b><p>Verkeerd type differentieelschakelaar, ontbrekende labels of een onlogische kringindeling.</p></div><span class="tag tag-soft">Advies</span></li>
+            <li class="us"><div><b>Differentieel en zekeringen</b><p>Verkeerd type differentieelschakelaar, verkeerde zekeringen, ontbrekende labels of een onlogische kringindeling.</p></div><span class="tag">Lossen wij op (meerprijs)</span></li>
             <li><div><b>Leidingen en bedrading</b><p>Te dunne kabels voor het vermogen of de zekering waarop ze aangesloten zijn.</p></div><span class="tag tag-soft">Advies</span></li>
             <li><div><b>Vochtige ruimtes</b><p>Stopcontacten of schakelaars met een te lage IP-graad in de badkamer, wasplaats of buiten.</p></div><span class="tag tag-soft">Advies</span></li>
           </ul>
@@ -182,6 +183,10 @@
               </select>
             </label>
           </div>
+          <fieldset>
+            <legend>Extra's <small>(optioneel, meerprijs)</small></legend>
+            <div class="choices">{{extra_keuzes}}</div>
+          </fieldset>
           <label>Opmerking <small>(optioneel)</small><textarea name="opmerking" rows="2" placeholder="bv. appartement op 2de verdieping, sleutel bij de buren…"></textarea></label>
 
           <div class="total">
@@ -230,6 +235,7 @@
         <details class="faq-q"><summary>Hoe weet ik welk pakket ik nodig heb?</summary><p>Kijk naar de bewoonbare oppervlakte en tel de automaten (zekeringen) in je verdeelkast. Val je in twee pakketten, dan geldt het hoogste. Twijfel je? Stuur ons een foto van je verdeelkast via WhatsApp, dan zeggen wij het je.</p></details>
         <details class="faq-q"><summary>Kan ik ook per e-mail een afspraak maken?</summary><p>Ja. Vul het formulier bij "Afspraak maken" in en kies onderaan voor e-mail. Je aanvraag komt dan rechtstreeks in onze mailbox terecht en je krijgt een bevestiging. Liever chatten? Kies dan WhatsApp.</p></details>
         <details class="faq-q"><summary>Kan ik een offerte krijgen zonder dat jullie langskomen?</summary><p>Ja. Stuur een foto van je keuringsverslag (en eventueel van je verdeelkast) via WhatsApp. Op basis daarvan krijg je een vrijblijvende prijs.</p></details>
+        <details class="faq-q"><summary>Kunnen jullie ook mijn differentieel of zekeringen vervangen?</summary><p>Ja. Staat er een inbreuk op je differentieel of zekeringen op je keuringsverslag, dan kunnen we die meteen mee oplossen, tegen een meerprijs. Stuur ons een foto van je verdeelkast of keuringsverslag, dan krijg je de prijs vooraf.</p></details>
         <details class="faq-q"><summary>Wanneer moet ik betalen?</summary><p>Pas wanneer je schema's klaar zijn en digitaal in je mailbox zitten. Je betaalt eenvoudig via overschrijving.</p></details>
         <details class="faq-q"><summary>Zijn er extra kosten?</summary><p>Nee. De prijs is vast, inclusief btw en verplaatsing in {{werkgebied}}. De keuring zelf door een erkend keuringsorganisme is niet inbegrepen.</p></details>
         <details class="faq-q"><summary>Doen jullie ook de keuring zelf?</summary><p>De keuring gebeurt door een erkend keuringsorganisme. Met onze schema's ben je daar volledig op voorbereid.</p></details>

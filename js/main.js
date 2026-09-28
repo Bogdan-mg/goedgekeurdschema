@@ -67,6 +67,7 @@
       $("#totalNote").textContent = st.total === null
         ? (st.keuze && st.keuze.id === "twijfel" ? "we bepalen het samen via een foto" : "prijs op aanvraag")
         : "incl. btw & verplaatsing";
+      if (st.fd.getAll("extra").length) $("#totalNote").textContent += " + extra's (meerprijs, prijs op maat)";
     };
     form.addEventListener("change", updateTotal);
     updateTotal();
@@ -99,6 +100,7 @@
       }
       err.textContent = "";
 
+      var extras = fd.getAll("extra").join(", ");
       var type = st.keuze ? st.keuze.naam + " (" + st.keuze.sub + ")" : "-";
       var prijs = st.total === null ? "op maat" : euro(st.total) + " (incl. btw)";
 
@@ -111,7 +113,9 @@
         ];
         if (tel) lines.push("📞 Telefoon: " + tel);
         if (mail) lines.push("✉️ E-mail: " + mail);
-        lines.push("🏠 Type: " + type, "🎯 Waarvoor: " + fd.get("reden"), "🗓️ Voorkeur: " + fd.get("moment"));
+        lines.push("🏠 Type: " + type);
+        if (extras) lines.push("➕ Extra (meerprijs): " + extras);
+        lines.push("🎯 Waarvoor: " + fd.get("reden"), "🗓️ Voorkeur: " + fd.get("moment"));
         if (opm) lines.push("💬 Opmerking: " + opm);
         lines.push("", st.total === null ? "Graag een prijs op maat." : "💶 Prijs volgens de website: " + prijs);
         window.open(waLink(lines.join("\n")), "_blank", "noopener");
@@ -126,6 +130,7 @@
         "Telefoon": tel || "-",
         "Type woning": type,
         "Prijs volgens website": prijs,
+        "Extra (meerprijs)": extras || "-",
         "Waarvoor": fd.get("reden"),
         "Voorkeur moment": fd.get("moment"),
         "Opmerking": opm || "-",
